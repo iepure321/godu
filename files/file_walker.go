@@ -92,7 +92,7 @@ func walkSubFolderConcurrently(
 	defer updateProgress(progress, &numSubFolders)
 	var mutex sync.Mutex
 	for _, entry := range entries {
-		fullPath := filepath.Join(dirName, entry.Name())
+		fullPath := filepath.Join(path, entry.Name())
 		if entry.IsDir() {
 			numSubFolders++
 			subFolderPath := filepath.Join(path, entry.Name())
